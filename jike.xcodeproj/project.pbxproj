@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		121E844C248BD421001A329D /* GTVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121E844B248BD421001A329D /* GTVideoViewController.m */; };
+		121E844F248CDCEE001A329D /* GTRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121E844E248CDCEE001A329D /* GTRecommendViewController.m */; };
+		121E8452248CF003001A329D /* GTNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 121E8451248CF003001A329D /* GTNormalTableViewCell.m */; };
 		1393C5322489C439003C96E6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393C5312489C439003C96E6 /* AppDelegate.m */; };
 		1393C5352489C439003C96E6 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393C5342489C439003C96E6 /* SceneDelegate.m */; };
 		1393C5382489C439003C96E6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393C5372489C439003C96E6 /* ViewController.m */; };
@@ -36,6 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		121E844A248BD421001A329D /* GTVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoViewController.h; sourceTree = "<group>"; };
+		121E844B248BD421001A329D /* GTVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoViewController.m; sourceTree = "<group>"; };
+		121E844D248CDCEE001A329D /* GTRecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTRecommendViewController.h; sourceTree = "<group>"; };
+		121E844E248CDCEE001A329D /* GTRecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTRecommendViewController.m; sourceTree = "<group>"; };
+		121E8450248CF003001A329D /* GTNormalTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTNormalTableViewCell.h; sourceTree = "<group>"; };
+		121E8451248CF003001A329D /* GTNormalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTNormalTableViewCell.m; sourceTree = "<group>"; };
 		1393C52D2489C439003C96E6 /* jike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1393C5302489C439003C96E6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1393C5312489C439003C96E6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -107,7 +116,13 @@
 				1393C5302489C439003C96E6 /* AppDelegate.h */,
 				1393C5312489C439003C96E6 /* AppDelegate.m */,
 				1393C5332489C439003C96E6 /* SceneDelegate.h */,
+				121E844D248CDCEE001A329D /* GTRecommendViewController.h */,
+				121E8450248CF003001A329D /* GTNormalTableViewCell.h */,
+				121E8451248CF003001A329D /* GTNormalTableViewCell.m */,
+				121E844E248CDCEE001A329D /* GTRecommendViewController.m */,
 				1393C5342489C439003C96E6 /* SceneDelegate.m */,
+				121E844A248BD421001A329D /* GTVideoViewController.h */,
+				121E844B248BD421001A329D /* GTVideoViewController.m */,
 				1393C5362489C439003C96E6 /* ViewController.h */,
 				1393C5372489C439003C96E6 /* ViewController.m */,
 				1393C5392489C439003C96E6 /* Main.storyboard */,
@@ -267,7 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				121E8452248CF003001A329D /* GTNormalTableViewCell.m in Sources */,
 				1393C5382489C439003C96E6 /* ViewController.m in Sources */,
+				121E844C248BD421001A329D /* GTVideoViewController.m in Sources */,
+				121E844F248CDCEE001A329D /* GTRecommendViewController.m in Sources */,
 				1393C5322489C439003C96E6 /* AppDelegate.m in Sources */,
 				1393C5432489C43C003C96E6 /* main.m in Sources */,
 				1393C5352489C439003C96E6 /* SceneDelegate.m in Sources */,
@@ -440,6 +458,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YN7K4S6J4T;
 				INFOPLIST_FILE = jike/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -456,6 +475,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YN7K4S6J4T;
 				INFOPLIST_FILE = jike/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

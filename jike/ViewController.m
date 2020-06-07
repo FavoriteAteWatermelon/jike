@@ -7,8 +7,8 @@
 //
 
 #import "ViewController.h"
-
-@interface ViewController () <UITableViewDataSource>
+#import "GTNormalTableViewCell.h"
+@interface ViewController () <UITableViewDataSource,UITableViewDelegate>
 
 @end
 
@@ -19,6 +19,7 @@
     UITableView *tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
     
     tableView.dataSource = self;
+    tableView.delegate = self;
     [self.view addSubview:tableView];
     
 
@@ -51,20 +52,32 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 20;
 }
+//设置高度
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 100;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UIViewController  *controller =[[UIViewController alloc]init];
+    controller.title = [NSString stringWithFormat:@"%@",@(indexPath.row)];
+    [self.navigationController pushViewController:controller animated:YES];
+}
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
 // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 //    复用高效实现复用列表
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
+    GTNormalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
 //    回收
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+        cell = [[GTNormalTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
     }
-    cell.textLabel.text = @"主标题";
-    cell.detailTextLabel.text = @"副标题";
-    cell.imageView.image = [UIImage imageNamed:@"video_selected.png"];
+//    调用自定义的方法
+    [cell layoutTableViewCell];
+//    cell.textLabel.text = @"主标题";
+//    cell.textLabel.text = [NSString stringWithFormat:@"主题-%@",@(indexPath.row)];
+//    cell.detailTextLabel.text = @"副标题";
+//    cell.imageView.image = [UIImage imageNamed:@"video_selected.png"];
     return cell;
 }
 

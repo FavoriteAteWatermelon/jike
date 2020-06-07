@@ -8,6 +8,8 @@
 
 #import "SceneDelegate.h"
 #import "ViewController.h"
+#import "GTVideoViewController.h"
+#import "GTRecommendViewController.h"
 @interface SceneDelegate ()<UITabBarControllerDelegate>
 
 @end
@@ -25,23 +27,25 @@
     view.tabBarItem.title = @"新闻";
     view.tabBarItem.image = [UIImage imageNamed:@"home.png"];
     view.tabBarItem.selectedImage = [UIImage imageNamed:@"home_selected.png"];
-    UIViewController *controller2 = [[UIViewController alloc]init];
-    controller2.view.backgroundColor = [UIColor yellowColor];
-    controller2.tabBarItem.title =@"视频";
-    controller2.tabBarItem.image = [UIImage imageNamed:@"video.png"];
-    controller2.tabBarItem.selectedImage = [UIImage imageNamed:@"video_selected.png"];
-    UIViewController *controller3 = [[UIViewController alloc]init];
-    controller3.view.backgroundColor = [UIColor greenColor];
-    controller3.tabBarItem.image = [UIImage imageNamed:@"recommend.png"];
-    controller3.tabBarItem.selectedImage = [UIImage imageNamed:@"recommend_selected.png"];
-    controller3.tabBarItem.title = @"推荐";
+    GTVideoViewController *video=[[GTVideoViewController alloc]init];
+//    UIViewController *controller2 = [[UIViewController alloc]init];
+//    controller2.view.backgroundColor = [UIColor yellowColor];
+    video.tabBarItem.title =@"视频";
+    video.tabBarItem.image = [UIImage imageNamed:@"video.png"];
+    video.tabBarItem.selectedImage = [UIImage imageNamed:@"video_selected.png"];
+    GTRecommendViewController *recommend = [[GTRecommendViewController alloc]init];
+//    UIViewController *controller3 = [[UIViewController alloc]init];
+//    controller3.view.backgroundColor = [UIColor greenColor];
+    recommend.tabBarItem.image = [UIImage imageNamed:@"recommend.png"];
+    recommend.tabBarItem.selectedImage = [UIImage imageNamed:@"recommend_selected.png"];
+    recommend.tabBarItem.title = @"推荐";
     UIViewController *controller4 = [[UIViewController alloc]init];
     controller4.view.backgroundColor = [UIColor blueColor];
     controller4.tabBarItem.title = @"我的";
     controller4.tabBarItem.image = [UIImage imageNamed:@"me.png"];
     controller4.tabBarItem.selectedImage = [UIImage imageNamed:@"me_selected.png"];
         UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:tabbarController];
-    [tabbarController setViewControllers:@[view,controller2,controller3,controller4]];
+    [tabbarController setViewControllers:@[view,video,recommend,controller4]];
 //    代理设置为当前的class
     tabbarController.delegate = self;
     self.window.rootViewController = nv;
