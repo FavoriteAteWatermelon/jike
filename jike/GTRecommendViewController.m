@@ -8,7 +8,7 @@
 
 #import "GTRecommendViewController.h"
 
-@interface GTRecommendViewController ()<UIScrollViewDelegate>
+@interface GTRecommendViewController ()<UIScrollViewDelegate,UIGestureRecognizerDelegate>
 
 @end
 
@@ -29,6 +29,14 @@
     for (int i= 0 ;i< 5;i++){
         [scrollView addSubview:({
             UIView *view =[[UIView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width * i, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+            [view addSubview:({
+                UIView *newView = [[UIView alloc] initWithFrame:CGRectMake(100, 200, 100, 100)];
+                newView.backgroundColor = [UIColor yellowColor];
+                UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(newViewClick)];
+                tapGesture.delegate = self;
+                [newView addGestureRecognizer:tapGesture];
+                newView;
+            })];
             view.backgroundColor =[colorArray objectAtIndex:i];
 //            注意这里要写一个view
             view;
@@ -50,10 +58,19 @@
     // Pass the selected object to the new view controller.
 }
 */
+//返回手势是否执行
+//- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+//    return NO;
+//}
+
+-(void) newViewClick{
+    NSLog(@"jjjj");
+}
 //偏移量
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
 //    NSLog(@"scrollViewDidScroll - %@",@(scrollView.contentOffset.y));
 }
+
 
 //开始拖拽
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{

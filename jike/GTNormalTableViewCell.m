@@ -53,14 +53,15 @@
             self.timeLabel;
         })];
         [self.contentView addSubview:({
-            self.rightImageView = [[UIImageView alloc]initWithFrame:CGRectMake( 270, 15,70, 70)];
+            self.rightImageView = [[UIImageView alloc]initWithFrame:CGRectMake( UIScreen.mainScreen.bounds.size.width - 90, 15,70, 70)];
             self.rightImageView.backgroundColor=[UIColor redColor];
             self.rightImageView;
         })];
         [self.contentView addSubview:({
             
-            self.deleteButton= [[UIButton alloc] initWithFrame:CGRectMake(220, 80, 30, 20)];
+            self.deleteButton= [[UIButton alloc] initWithFrame:CGRectMake(UIScreen.mainScreen.bounds.size.width - 120, 80, 30, 20)];
             [self.deleteButton setTitle:@"X" forState:UIControlStateNormal];
+            [self.deleteButton addTarget:self action:@selector(deleteButtonClick) forControlEvents:UIControlEventTouchUpInside];
               [self.deleteButton setTitle:@"Y" forState:UIControlStateHighlighted];
             self.deleteButton.backgroundColor=[UIColor blueColor];
             self.deleteButton;
@@ -79,5 +80,8 @@
       [self.timeLabel sizeToFit];
         self.timeLabel.frame = CGRectMake(self.commentLabel.frame.origin.x + self.commentLabel.frame.size.width + 15, self.commentLabel.frame.origin.y, self.timeLabel.frame.size.width, self.timeLabel.frame.size.height);
     self.rightImageView.image = [UIImage imageNamed:@"video.png"];
+}
+-(void)deleteButtonClick{
+    NSLog(@"ddd");
 }
 @end
